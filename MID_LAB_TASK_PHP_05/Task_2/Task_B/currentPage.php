@@ -21,10 +21,10 @@ if(isset($_POST['submit']))
         <title>HTML Site</title>
     </head>
     <body>
-        <form class="" action="handlerPage.php" method="post">
+        <form class="" action="" method="post">
             Email: <br>
-            <input type="email" name="myname" value=""><br>
-            <input type="submit" name="" value="Submit"><br>
+            <input type="email" name="myname" value="myname"><br>
+            <input type="submit" name="submit" value="Submit"><br>
         </form>
     </body>
 </html>
