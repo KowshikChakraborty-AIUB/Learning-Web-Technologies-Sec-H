@@ -1,7 +1,7 @@
 <?php 
 
 	//connection
-	$conn = mysqli_connect('localhost', 'root', '', 'Registration');
+	$conn = mysqli_connect('localhost', 'root', '', 'user-mgt');
 
 	/*if($conn){
 		echo "success";
@@ -9,15 +9,14 @@
 		die('DB error');
 	}*/
 
-	$sql = 'select * from Registration';
+	//$sql = 'select * from Registration';
 	$result = mysqli_query($conn, $sql);
 
-	echo "<table border=1> 
+	/*echo "<table border=1> 
 			<tr>
-				<td>ID</td>
-				<td>Username</td>
+				<td>User Name</td>
+				<td>Password</td>
 				<td>Email</td>
-				<td>Type</td>
 			</tr>";
 	while ($row = mysqli_fetch_assoc($result)) {
 		
@@ -28,7 +27,7 @@
 					<td>{$row['type']}</td>
 				</tr>";
 	}
-	echo "</table>";
+	echo "</table>";*/
 
 	//$sql = "select * from users where username='' and password=''"; 
 	
@@ -42,6 +41,6 @@
 
 
 	//close
-	mysqli_close($conn)
+	mysqli_close($conn);
 
 ?>

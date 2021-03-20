@@ -13,16 +13,14 @@
 		}else{
 
 			if($password == $repass){
-
-				$user = [	
-							'username'=>$username, 
-							'password'=>$password, 
-							'email'=> $email
-						];
-
+		
+				$conn = mysqli_connect('localhost', 'root', '', 'user-mgt');
+				$sql = "insert into users values('', '{User_Name[$username]}', '{Password[$password]}', '{Email[$email]}')";
+				$result = mysqli_query($conn, $sql);
+				$row = mysqli_fetch_assoc($result);
 				//$_SESSION['username'] = $username;
 				//$_SESSION['password'] = $password;
-				$_SESSION['current_user'] = $user;
+				//$_SESSION['current_user'] = $user;
 
 				header('location: ../view/login.html');
 			}else{
