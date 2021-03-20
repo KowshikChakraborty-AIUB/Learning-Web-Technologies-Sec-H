@@ -20,7 +20,7 @@
 	<div id="main_content">
 		<form method="post" action="../controller/editCheck.php">
 			<fieldset>
-				<legend>Create New</legend>
+				<legend>Delete User</legend>
 				<table>
 					<tr>
 						<td>Username</td>
@@ -38,7 +38,7 @@
 					<tr>
 						<td></td>
 						<td>
-							<input type="submit" name="update" value="Update">
+							<input type="submit" name="delete" value="Delete">
 						</td>
 					</tr>
 				</table>
