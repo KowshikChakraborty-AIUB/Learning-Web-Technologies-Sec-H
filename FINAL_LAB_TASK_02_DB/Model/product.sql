@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2021 at 09:29 AM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.2
+-- Generation Time: Mar 21, 2021 at 10:19 AM
+-- Server version: 10.4.10-MariaDB
+-- PHP Version: 7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,16 +19,16 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `product_db`
+-- Database: `product`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Table structure for table `product`
 --
 
-CREATE TABLE `products` (
+CREATE TABLE `product` (
   `id` int(30) NOT NULL,
   `name` varchar(60) NOT NULL,
   `profit` varchar(20) NOT NULL,
@@ -36,20 +37,21 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `products`
+-- Dumping data for table `product`
 --
 
-INSERT INTO `products` (`id`, `name`, `profit`, `buying price`, `selling price`) VALUES
-(1, 'samsung', '50', 100, 50);
+INSERT INTO `product` (`id`, `name`, `profit`, `buying price`, `selling price`) VALUES
+(1, 'Hitachi', '50', 150, 200),
+(2, 'Oppo', '30', 120, 150);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `products`
+-- Indexes for table `product`
 --
-ALTER TABLE `products`
+ALTER TABLE `product`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -57,10 +59,10 @@ ALTER TABLE `products`
 --
 
 --
--- AUTO_INCREMENT for table `products`
+-- AUTO_INCREMENT for table `product`
 --
-ALTER TABLE `products`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `product`
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
