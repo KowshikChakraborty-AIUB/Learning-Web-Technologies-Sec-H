@@ -44,4 +44,18 @@
 	}
 
 
+
+	function updateUser($user){
+
+		$conn = getConnection();
+		$sql = "update registration set Password='{$user['password']}'";
+		
+		if(mysqli_query($conn, $sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+
 ?>
