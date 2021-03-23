@@ -17,9 +17,9 @@
                 $_SESSION['flag'] = true;
                 $_SESSION['Id'] = $Id;
                 
-                $user = getUserById($id);
+                $user = getUserById($Id);
                 
-                if($User['btnradio'] == 'User')
+                if($user['Type'] == 'User')
                 {
 
 				 header('location: ../view/user_home.html');

@@ -1,7 +1,5 @@
 <?php
 
-    session_start();
-
     require_once('../model/userModel.php');
 
 	if(isset($_POST['submit']))
@@ -14,20 +12,27 @@
 		if($pass == "" and $newpass == "" and $repass == ""){
 			echo "null submission";
     }elseif($pass != $newpass and $newpass == $repass){
-        $userr = [	
-            'password'=>$pass, 
-            'newpassword'=>$newpass,
-            'repassword'=> $repass
-        ];
-
-
-                      $status = updateUser($user);
-
-						if($status){
-							header('location: ../view/login.html');
-						}else{
-							echo "error";
-						}
+        session_start();
+			$User = getUserById($_SESSION['Id']);
+			$Id = $User['ID'];
+			$password = $User['Password'];
+			$newpass = $_POST['newpassword'];
+			if($_POST['password'] != $password)
+			{
+				echo "Your entered current password is wrong";
+			}
+			else
+			{
+				$check = updatePassword($Id, $newpass);
+				if($check)
+				{
+					echo "Password changed!";
+				}
+				else
+				{
+					echo "Error occured!";
+				}
+			}
 		}else {
       echo "Invalid Password";
     }

@@ -32,11 +32,11 @@
 
 
 
-	function getUserById($id){
+	function getUserById($Id){
 
 		$conn = getConnection();
 
-		$sql = "select * from registration where ID='{$id}'";
+		$sql = "select * from registration where ID='{$Id}'";
 		$result = mysqli_query($conn, $sql);
 		$row = mysqli_fetch_assoc($result);
 
@@ -45,17 +45,16 @@
 
 
 
-	function updateUser($user){
-
+	function updatePassword($Id, $newpass){
 		$conn = getConnection();
-		$sql = "update registration set Password='{$user['password']}'";
-		
+		$sql = "update registration set Password='{$newpass}' where ID='{$Id}'";
 		if(mysqli_query($conn, $sql)){
 			return true;
 		}else{
 			return false;
 		}
 	}
+
 
 
 ?>
