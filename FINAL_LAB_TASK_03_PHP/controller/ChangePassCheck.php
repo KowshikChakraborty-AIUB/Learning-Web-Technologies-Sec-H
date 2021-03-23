@@ -2,6 +2,8 @@
 
     session_start();
 
+    require_once('../model/userModel.php');
+
 	if(isset($_POST['submit']))
 	{
 
