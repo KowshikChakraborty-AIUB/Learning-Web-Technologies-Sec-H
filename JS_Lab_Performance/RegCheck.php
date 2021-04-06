@@ -40,7 +40,7 @@
 				//$_SESSION['password'] = $password;
 				$_SESSION['current_user'] = $userr;
 
-				header('location: ../View/LoginPage.php');
+				header('location: LoginPage.html');
 			}else{
 				echo "password & confirm password mismatch..";
 			}
